@@ -8,19 +8,21 @@
 #ifndef CLIENT_H_
 #define CLIENT_H_
 
-include <stdio.h>
+#include <stdio.h>
 #include <string.h>
-#include <stdlib>
+#include <stdlib.h>
 #include <stdbool.h>
 
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
+#include <arpa/inet.h>
 #include <netdb.h>
 
 #define SOCKET_ERROR "SOCKET ERROR "                //macro for socket error
 #define CONNECTION_CLOSED "CONNECTION CLOSED "      //macro for closing the connection between the server and the client
 #define UNKNOWN_HOST_NAME "UNKNOWN HOST "           //macro for unknown host name
+#define SUCCESS "SUCCESS "                          //macro for success of the execution
 
 #define DEFAULT_BUFFER_SIZE 1024                //the default buffer size in bytes
 #define DEFAULT_PORT    5150                    //the default port onto which the two processes i.e. client and server listen
@@ -31,9 +33,10 @@ typedef struct sockaddr_in SocketAddress;       //structure to represent socket 
 /*
     function to print the socket address
     it takes the structure for the socket address and prints information about it ie <ip-address : port> combination
+    and the message to describe the nature of the socket address
     it returns nothing
 */
-void print_socket_address(SocketAddress socket_address);
+void print_socket_address(SocketAddress socket_address, char *msg);
 
 /*
     function to prepare / make the socket address of the destintion machine 
@@ -63,8 +66,8 @@ typedef struct Job{
 
 void write_to_file(Job *mesage, FILE *file);
 void read_from_file();
-void print_error(char *error_msg);
-void send();
+//void print_error(char *error_msg);
+//void send();
 void receive();
 void dispatch();
 void getdata(Job *job);

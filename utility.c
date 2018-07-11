@@ -282,7 +282,7 @@ void print_error(char *error_msg, char *error_type){
     NEW_LINE;
 }
 /*
-    Function to check if the entered string is a number, it looks at each character in the string entered, 
+    function to check if the entered string is a number, it looks at each character in the string entered, 
     when it encounters a character that is not a number, it returns 0 (false)
     it takes a string 'str' to be checked if it is a number
     it returns 1(true) if all the characters in the string are numbers or 0 (false) if at least one of the characters in the string 

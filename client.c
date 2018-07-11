@@ -12,11 +12,13 @@
 /*
     function to print the socket address
     it takes the structure for the socket address and prints information about it ie <ip-address : port> combination
+    and the message to describe the nature of the socket address
     it returns nothing
 */
-void print_socket_address(SocketAddress socket_address){
-    NEW_LN;
-	printf(" > Socket address %s:%d",inet_ntoa(socket_address.sin_addr), ntohs(socket_address.sin_port));
+void print_socket_address(SocketAddress socket_address, char *msg){
+    NEW_LINE;
+	printf(" %s %s:%d",msg,inet_ntoa(socket_address.sin_addr), ntohs(socket_address.sin_port));
+    NEW_LINE;
 }
 
 /*
@@ -34,8 +36,8 @@ void prepare_destination_socket_address(SocketAddress *dest_socket_addr, char *h
     /* check if the valid host name is supplied otherwise close the program */
     if(host == NULL){
         printf(" %s : %s",UNKNOWN_HOST_NAME, hostname);
-        NEW_LN;
-        print_message("Enter the correct host name name", "HELP")
+        NEW_LINE;
+        print_message("Enter the correct host name name", HELP);
         exit(EXIT_FAILURE);
     }
 

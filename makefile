@@ -5,7 +5,7 @@
 #   File name: makefile
 #
 
-OBJECTS = main.o string_utility.o utility.o
+OBJECTS = main.o string_utility.o utility.o 
 CC = gcc
 CFLAGS = -w
 
@@ -21,5 +21,8 @@ string_utility.o: string_utility.c string_utility.h
 utility.o: utility.c utility.h
 	$(CC) -c utility.c
 
+#client.o: client.c client.h
+#	$(CC) -c client.c
+#remove the object files
 clean:
 	-rm *.o

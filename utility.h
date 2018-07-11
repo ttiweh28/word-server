@@ -25,6 +25,8 @@
 #define FEW_ARGUMENTS "FEW ARGUMENTS "          //few arguments macro
 #define MESSAGE "MESSAGE "                      //message macro
 #define RESULT "RESULT "                        //the result macro
+#define HELP "HELP "                            //the help macro
+#define ERROR "ERROR "                          //the general error macro
 
 /*
     ######################################################################################################################

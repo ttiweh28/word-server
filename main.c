@@ -16,7 +16,7 @@ int main(int argc, char const *argv[])
     while(1){
         input_string = prompt((char *)input_string);    //print the prompt
         command_interpreter(input_string);              //interprete the command typed in
-        free(input_string);             //free up the memory where the commanda was stored
+        free((char *)input_string);             //free up the memory where the commanda was stored
     }
 
 }
